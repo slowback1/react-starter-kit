@@ -2,6 +2,24 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Getting Started
+
+This project uses [Task](https://taskfile.dev/) for common development tasks. First, install Task by following the [installation guide](https://taskfile.dev/installation/).
+
+Available tasks:
+- `task setup` - Initial setup: install dependencies
+- `task dev` - Run in development mode with hot reload
+- `task test` - Run unit tests with Vitest
+
+Alternatively, you can use npm scripts directly:
+- `npm install` - Install dependencies
+- `npm run dev` - Start development server
+- `npm run test` - Run tests
+- `npm run build` - Build for production
+- `npm run lint` - Lint code
+
+## Plugins
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
