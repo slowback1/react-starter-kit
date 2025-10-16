@@ -1,17 +1,24 @@
 version: '3'
 
 tasks:
-  setup:
-    desc: Initial setup - install dependencies
-    cmds:
-      - npm install
+    setup:
+        desc: Initial setup - install dependencies
+        cmds:
+            - npm ci
 
-  dev:
-    desc: Run in dev mode - start Vite development server
-    cmds:
-      - npm run dev
+    dev:
+        desc: Run in dev mode - start Vite development server
+        cmds:
+            - npm run dev
 
-  test:
-    desc: Run unit tests using Vitest
-    cmds:
-      - npm run test
+    test:
+        desc: Run unit tests using Vitest
+        cmds:
+            - npm run test
+
+    precommit:
+        desc: Run pre-commit checks - lint and test
+        cmds:
+            - npm run lint:fix
+            - npm run format
+            - npm run test:once

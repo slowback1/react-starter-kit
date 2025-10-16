@@ -7,11 +7,13 @@ This template provides a minimal setup to get React working in Vite with HMR and
 This project uses [Task](https://taskfile.dev/) for common development tasks. First, install Task by following the [installation guide](https://taskfile.dev/installation/).
 
 Available tasks:
+
 - `task setup` - Initial setup: install dependencies
 - `task dev` - Run in development mode with hot reload
 - `task test` - Run unit tests with Vitest
 
 Alternatively, you can use npm scripts directly:
+
 - `npm install` - Install dependencies
 - `npm run dev` - Start development server
 - `npm run test` - Run tests
@@ -35,29 +37,29 @@ If you are developing a production application, we recommend updating the config
 
 ```js
 export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+    globalIgnores(['dist']),
+    {
+        files: ['**/*.{ts,tsx}'],
+        extends: [
+            // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+            // Remove tseslint.configs.recommended and replace with this
+            tseslint.configs.recommendedTypeChecked,
+            // Alternatively, use this for stricter rules
+            tseslint.configs.strictTypeChecked,
+            // Optionally, add this for stylistic rules
+            tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
+            // Other configs...
+        ],
+        languageOptions: {
+            parserOptions: {
+                project: ['./tsconfig.node.json', './tsconfig.app.json'],
+                tsconfigRootDir: import.meta.dirname,
+            },
+            // other options...
+        },
     },
-  },
 ])
 ```
 
@@ -69,23 +71,23 @@ import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
 
 export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
+    globalIgnores(['dist']),
+    {
+        files: ['**/*.{ts,tsx}'],
+        extends: [
+            // Other configs...
+            // Enable lint rules for React
+            reactX.configs['recommended-typescript'],
+            // Enable lint rules for React DOM
+            reactDom.configs.recommended,
+        ],
+        languageOptions: {
+            parserOptions: {
+                project: ['./tsconfig.node.json', './tsconfig.app.json'],
+                tsconfigRootDir: import.meta.dirname,
+            },
+            // other options...
+        },
     },
-  },
 ])
 ```
